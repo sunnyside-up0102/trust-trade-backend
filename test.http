@@ -1,0 +1,8 @@
+### 거래 생성 테스트
+POST http://localhost:3000/deal
+Content-Type: application/json
+
+{
+  "productName": "로렉스 서브마리너",
+  "price": 15000000
+}
