@@ -22,4 +22,8 @@ export class AppService {
     // [B] 만든 데이터를 DB 금고에 실제로 집어넣고(save), 그 결과를 돌려받습니다.
     return await this.dealRepository.save(newDeal); //
   }
+
+  async findAllDeals() {
+    return await this.dealRepository.find();
+  }
 }

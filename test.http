@@ -1,4 +1,4 @@
-### 거래 생성 테스트
+### 거래 1: 로렉스
 POST http://localhost:3000/deal
 Content-Type: application/json
 
@@ -6,3 +6,15 @@ Content-Type: application/json
   "productName": "로렉스 서브마리너",
   "price": 15000000
 }
+
+### 거래 2: 샤넬백
+POST http://localhost:3000/deal
+Content-Type: application/json
+
+{
+  "productName": "샤넬백",
+  "price": 20000000
+}
+
+### 전체 거래 조회
+GET http://localhost:3000/deal

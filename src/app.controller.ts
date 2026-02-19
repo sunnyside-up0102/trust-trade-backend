@@ -13,4 +13,9 @@ export class AppController {
     // [4] "자, 이제 주방에 이 재료를 전달해서 요리해달라고 시키자!"
     return await this.appService.createDeal(productName, price);
   }
+
+  @Get('deal') //"누가 GET으로 /deal에 오면 이걸 실행해!"
+  async getAllDeals() {
+    return await this.appService.findAllDeals(); //주방장님, 모든 거래 내역 좀 가져와 주세요!
+  }
 }
