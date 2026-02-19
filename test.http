@@ -18,3 +18,13 @@ Content-Type: application/json
 
 ### 전체 거래 조회
 GET http://localhost:3000/deal
+
+
+### 거래 수정 (로렉스 가격 깎기)
+PATCH http://localhost:3000/deal/여기에_복사한_ID_입력
+Content-Type: application/json
+
+{
+  "price": 14000000,
+  "status": "COMPLETED"
+}

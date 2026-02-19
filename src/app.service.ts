@@ -24,6 +24,15 @@ export class AppService {
   }
 
   async findAllDeals() {
-    return await this.dealRepository.find();
+    return await this.dealRepository.find(); //장부(Entity)에 있는 모든 데이터를 찾아라
+  }
+
+  async findOneDeal(id: string) {
+    return await this.dealRepository.findOneBy({ id });
+  }
+
+  async updateDeal(id: string, updateData: any) {
+    await this.dealRepository.update(id, updateData);
+    return this.findOneDeal(id);
   }
 }

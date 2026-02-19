@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body } from '@nestjs/common';
+import { Controller, Get, Post, Body, Param, Patch } from '@nestjs/common';
 import { AppService } from './app.service';
 
 @Controller()
@@ -17,5 +17,14 @@ export class AppController {
   @Get('deal') //"누가 GET으로 /deal에 오면 이걸 실행해!"
   async getAllDeals() {
     return await this.appService.findAllDeals(); //주방장님, 모든 거래 내역 좀 가져와 주세요!
+  }
+  @Get('deal/:id')
+  async getOneDeal(@Param('id') id: string) {
+    return await this.appService.findOneDeal(id);
+  }
+
+  @Patch('deal/:id')
+  async updateDeal(@Param('id') id: string, @Body() updateData: any) {
+    return await this.appService.updateDeal(id, updateData);
   }
 }
